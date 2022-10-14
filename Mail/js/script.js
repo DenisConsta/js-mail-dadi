@@ -8,7 +8,7 @@ btn.addEventListener('click', function() {
 
   if(!(userMail.value === "")){
     let isPresent = false;
-    for(let i=0; i<(mailList.length-1); i++){
+    for(let i=0; i<mailList.length; i++){
       if(mailList[i] === userMail.value){
         isPresent = true;
       }
