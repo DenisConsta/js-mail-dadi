@@ -1,13 +1,22 @@
-const userRandom = Math.floor(Math.random() * (6)) + 1;
-const computerRandom = Math.floor(Math.random() * (6)) + 1;
+const btn = document.querySelector(".btn");
+const output = document.createElement('output');
+output.classList.add('lead');
+document.querySelector(".col-6").append(output);
 
-console.log("Tu : " + userRandom);
-console.log("PC : " + computerRandom);
+btn.addEventListener('click', function() {
+  const userRandom = Math.floor(Math.random() * (6)) + 1;
+  const computerRandom = Math.floor(Math.random() * (6)) + 1;
 
-if(userRandom > computerRandom){
-  console.log("Hai vinto ! ");
-}else if(userRandom < computerRandom){
-  console.log("Hai perso :( ");
-}else{
-  console.log("Pareggio :| ");
-}
+  output.innerHTML = `
+    TU : ${userRandom}<br>
+    PC : ${computerRandom}
+  `;
+
+  if(userRandom > computerRandom){
+    document.querySelector('h3').innerHTML = "HAI VINTO !";
+  }else if(userRandom < computerRandom){
+    document.querySelector('h3').innerHTML = "HAI PERSO :(";
+  }else{
+    document.querySelector('h3').innerHTML = "PAREGGIO :|";
+  }   
+});
